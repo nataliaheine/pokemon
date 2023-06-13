@@ -46,10 +46,10 @@ with st.sidebar:
         
     # Bei den weiteren Eingaben:
     elif name_input and name_select:
-        if name_input = "":
+        if name_input == "":
             name = name_select
             name_select = ""
-        elif name_select = "":
+        elif name_select == "":
             name = name_input
             name_input = ""
         
