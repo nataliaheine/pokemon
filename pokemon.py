@@ -38,6 +38,7 @@ with st.sidebar:
     name = ""
     if name_select:
         name = name_select
+        name_select = ""
     elif name_input:
         name = name_input
         
