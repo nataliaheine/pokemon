@@ -35,23 +35,7 @@ with st.sidebar:
     name_input = st.text_input("Schreibe den Namen eines Pokemons").lower()
     name_select = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
     
-    if name_input and not name_select:
-        name = name_input
-    elif name_select and not name_input:
-        name = name_select
-    else:
-        name = ""
-
-    if name_input and name_select:
-        if name_input == "":
-            name = name_select
-        elif name_select == "":
-            name = name_input
-
-    name_input = ""
-    name_select = ""
     
-    '''
     # Bei der ersten Eingabe ist entweder name_input oder name_select True, aber nicht die beiden.
     # Das kann auch bei den weiteren Eingaben der Fall sein, wenn man z.B. 3 Mal nach einander einen Namen eingibt, aber noch nichts aus der Liste gewählt hat.
     
@@ -74,7 +58,7 @@ with st.sidebar:
         elif name_select != "":
             name = name_select
             name_select = ""
-    '''
+    
         
     st.info("Die Liste ist klein. Mir war einfach nur wichtig, dass es funktioniert.")
     st.info("Man kann aber selber jeden beliebigen Namen eingeben")
