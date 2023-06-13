@@ -38,7 +38,7 @@ with st.sidebar:
     name = ""
     if name_select:
         name = name_select
-        name_select = ""
+        name_select = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
     elif name_input:
         name = name_input
         
