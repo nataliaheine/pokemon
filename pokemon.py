@@ -36,18 +36,27 @@ with st.sidebar:
     name_input = st.text_input("Schreibe den Namen eines Pokemons").lower()
     name_select = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
     
-    # Bei der ersten Eingabe
+    
+    
+    
+    # Bei der ersten Eingabe ist entweder name_input oder name_select True, aber nicht die beiden.
+    # Das kann auch bei den weiteren Eingaben der Fall sein, wenn man z.B. 3 Mal nach einander einen Namen eingibt, aber noch nichts aus der Liste gewählt hat.
+    
     if name_input and not name_select:
         name = name_input
-        name_input = ""
+        name_input = ""                   #Das ist für den Fall, dass man den ersten Namen selber eingegeben hat und als nächstes den Name aus der Liste wählt
     elif name_select and not name_input:
         name = name_select
-        name_select = ""
+        name_select = ""                  # Das ist für den Fall, dass man den ersten Namen aus der Liste gewählt hat und den weiteren Namen selber eingeben will 
         
-    # Bei den weiteren Eingaben:
+        
+    # Sobald man sowohl selber einen Namen eingegeben hat, als auch einen Namen aus der Liste gewählt hat, sind beide Variablen name_input und name_select True
+    # Dann müssen wir der Variable name den richtigen Wert übergeben und dafür if-elif Abfrage
+    
     elif name_input and name_select:
-        if name_input == "":
-            name = name_select
+        if name_input == "":             # Z.B. zuerst haben wir einen Namen eingegeben, das Resultat bekommen und die Variable name_input hat den Wert "" bekommen
+            name = name_select           # In diesem Fall sollte name den Wert von name_select übernehmen, was aber nicht passiert! name bekommt den Wert "" und weiter passiert gar nichts, 
+                                         # weil MAINFRAME nur dann ausgeführt wird, wenn name nicht gleich "" ist
             name_select = ""
         elif name_select == "":
             name = name_input
