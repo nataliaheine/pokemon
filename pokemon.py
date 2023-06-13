@@ -34,7 +34,7 @@ with st.sidebar:
     st.title("Projekt Pokemon")
     name_input = st.text_input("Schreibe den Namen eines Pokemons").lower()
     name_select = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
-    
+    name = ""
     
     # Bei der ersten Eingabe ist entweder name_input oder name_select True, aber nicht die beiden.
     # Das kann auch bei den weiteren Eingaben der Fall sein, wenn man z.B. 3 Mal nach einander einen Namen eingibt, aber noch nichts aus der Liste gewählt hat.
