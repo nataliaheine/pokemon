@@ -33,7 +33,8 @@ def fetch_data(name):
 with st.sidebar:
     st.title("Projekt Pokemon")
     name = st.text_input("Schreibe den Namen eines Pokemons").lower()
-    name = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
+    if name == "":
+        name = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
     st.info("Die Liste ist klein. Mir war einfach nur wichtig, dass es funktioniert.")
     st.info("Man kann aber selber jeden beliebigen Namen eingeben")
     st.info("Oder versuche einen ungültigen Namen zu schreiben")
