@@ -39,11 +39,6 @@ with st.sidebar:
     name_select = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
     select_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    if name_input:
-    st.write(f"Eingabe über input um {input_time}")
-
-    if name_select:
-        st.write(f"Auswahl über selectbox um {select_time}")
         
     name = ""
 
@@ -72,6 +67,13 @@ with st.sidebar:
     #    st.text(pokemon)
 
 # MAINFRAME-------------------------------------------------------------------------------------
+if name_input:
+    st.write(f"Eingabe über input um {input_time}")
+
+if name_select:
+    st.write(f"Auswahl über selectbox um {select_time}")
+
+        
 if name != "": # Sonst sieht man einen Fehler bis man einen Namen eingegeben hat
     if fetch_data(name) == False: 
         st.info(f"Es gibt kein Pokemon mit dem Namen {name}. Versuche es nochmal!")
