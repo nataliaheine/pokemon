@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import streamlit as st
+from datetime import datetime
 
 BASE_URL = "https://pokeapi.co/api/v2/pokemon/"
 
@@ -33,7 +34,17 @@ def fetch_data(name):
 with st.sidebar:
     st.title("Projekt Pokemon")
     name_input = st.text_input("Schreibe den Namen eines Pokemons").lower()
+    input_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
     name_select = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
+    select_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    if name_input:
+    st.write(f"Eingabe über input um {input_time}")
+
+    if name_select:
+        st.write(f"Auswahl über selectbox um {select_time}")
+        
     name = ""
 
     if name_input and not name_select:
