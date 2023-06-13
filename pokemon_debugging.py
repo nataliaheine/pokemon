@@ -34,6 +34,22 @@ with st.sidebar:
     st.title("Projekt Pokemon")
     name = st.text_input("Schreibe den Namen eines Pokemons").lower()
     name = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
+    name = ""
+
+    if name_input and not name_select:
+        name = name_input
+        name_input = ""
+    elif name_select and not name_input:
+        name = name_select
+        name_select = ""
+    elif name_input and name_select:
+        if name_input == "":
+            name = name_select
+            name_select = ""
+        elif name_select == "":
+            name = name_input
+            name_input = ""
+        
     st.info("Die Liste ist klein. Mir war einfach nur wichtig, dass es funktioniert.")
     st.info("Man kann aber selber jeden beliebigen Namen eingeben")
     st.info("Oder versuche einen ungültigen Namen zu schreiben")
