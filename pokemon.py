@@ -39,10 +39,10 @@ with st.sidebar:
     # Bei der ersten Eingabe
     if name_input and not name_select:
         name = name_input
-        name_input = None
+        name_input = ""
     elif name_select and not name_input:
         name = name_select
-        name_select = None
+        name_select = ""
         
     st.info("Die Liste ist klein. Mir war einfach nur wichtig, dass es funktioniert.")
     st.info("Man kann aber selber jeden beliebigen Namen eingeben")
