@@ -45,12 +45,13 @@ with st.sidebar:
         name_select = ""
         
     # Bei den weiteren Eingaben:
-    elif name_input and name_select=="":
-        name = name_input
-        name_input = ""
-    elif name_select and name_input=="":
-        name = name_select
-        name_select = ""
+    elif name_input and name_select:
+        if name_input = "":
+            name = name_select
+            name_select = ""
+        elif name_select = "":
+            name = name_input
+            name_input = ""
         
     st.info("Die Liste ist klein. Mir war einfach nur wichtig, dass es funktioniert.")
     st.info("Man kann aber selber jeden beliebigen Namen eingeben")
