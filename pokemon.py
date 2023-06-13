@@ -32,6 +32,7 @@ def fetch_data(name):
 # SIDEBAR---------------------------------------------------------------------------------------
 with st.sidebar:
     st.title("Projekt Pokemon")
+    name = ""
     name_input = st.text_input("Schreibe den Namen eines Pokemons").lower()
     name_select = st.selectbox("Oder wähle aus der Liste: ", [""] + ["Bulbasaur", "Charmander", "Squirtle", "Caterpie", "Weedle", "Pidgey", "Raichu"]).lower()
     
