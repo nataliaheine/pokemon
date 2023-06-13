@@ -51,14 +51,15 @@ with st.sidebar:
     # Dann müssen wir der Variable name den richtigen Wert übergeben und dafür if-elif Abfrage
     
     if name_input and name_select:
+        print(name)
         if name_input == "":             # Z.B. zuerst haben wir einen Namen eingegeben, das Resultat bekommen und die Variable name_input hat den Wert "" bekommen
             name = name_select
             name_select = ""             # In diesem Fall sollte name den Wert von name_select übernehmen, was aber nicht passiert! name bekommt den Wert "" und weiter passiert gar nichts, 
-                                         # weil MAINFRAME nur dann ausgeführt wird, wenn name nicht gleich "" ist
+            print(name)                  # weil MAINFRAME nur dann ausgeführt wird, wenn name nicht gleich "" ist
         elif name_select == "":
             name = name_input
             name_input = ""
-    
+            print(name) 
         
     st.info("Die Liste ist klein. Mir war einfach nur wichtig, dass es funktioniert.")
     st.info("Man kann aber selber jeden beliebigen Namen eingeben")
